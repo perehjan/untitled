@@ -1,0 +1,60 @@
+16:35:59.230 Transaction 1 begin: [2018-02-19 16:35:59.229]
+16:12:21.236 Some log data
+16:12:21.236 Some log data
+16:12:21.236 Some log data
+16:12:21.236 Some log data [2018-02-19 16:35:59.229]
+16:12:21.236 Some log data
+16:12:21.236 Some log data
+...
+16:12:21.236 Some log data
+16:12:21.236 Some log data
+16:12:21.237 Some log data
+....
+16:12:21.237 Some log data
+	EMV Scheme Matched: [M/Chip 2.1 or 2.2]
+16:12:21.237 Some log data
+16:12:21.237 Some log data [2018-02-19 16:35:59.229]
+16:12:21.237 Some log data
+....
+16:12:21.237 Some log data
+16:35:59.572 Transaction 2 begin: [2018-02-19 16:35:59.574]
+16:35:59.572 Some log data
+16:35:59.573 Some log data
+16:35:59.573 Some log data
+...
+16:35:59.573 Some log data
+16:35:59.573 Some log data [2018-02-19 16:35:59.574] 
+16:35:59.573 Some log data
+16:35:59.574 Some log data
+...
+16:35:59.574 Transaction 1 end ... some text: [2018-02-19 16:35:59.229]
+16:35:59.574 Some log data
+16:35:59.575 Some log data
+16:35:59.575 Some log data
+EMV Scheme Matched: [M/Chip Advance]
+16:35:59.575 Some log data
+16:35:59.576 Some log data
+16:35:59.576 Some log data
+...
+16:35:59.576 Some log data
+16:35:59.576 Transaction 2  last occurrence, end: [2018-02-19 16:35:59.574]
+16:36:00.013 INFO Some log data, transact 3 start [2018-02-19 16:36:00.006]
+16:36:00.013 Some log data
+16:36:00.013 Some log data
+16:36:00.016 Some log data
+...
+16:36:00.016 Some log data [2018-02-19 16:36:00.006]
+16:36:00.016 Some log data
+16:36:00.016 Some log data
+		EMV Scheme Matched: [M/Chip 4]
+16:36:00.016 Some log data
+16:36:00.017 Some log data
+16:36:00.017 Some log data
+...
+16:36:00.017 Some log data
+16:36:00.017 Some log data
+	Sending reply to [ something] [2018-02-19 16:36:00.006]
+16:36:00.018 Some log data
+16:36:00.019 Some log data
+...
+16:37:01.023 Some log data	
