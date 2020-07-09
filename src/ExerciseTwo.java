@@ -77,6 +77,7 @@ class MainTwo {
     public static void main(String[] args) {
         List<String> lines = new ArrayList<>();
 
+
         try {
             lines = Files.readAllLines(Paths.get(".\\A.log"), StandardCharsets.UTF_8);
             ExerciseTwo logA = new ExerciseTwo(lines);
