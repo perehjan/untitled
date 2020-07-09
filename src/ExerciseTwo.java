@@ -7,39 +7,39 @@ import java.util.List;
 
 public class ExerciseTwo {
     List<String> lines;
-    List<Transaction> transactions = new ArrayList<>();
+    List<Transaction> transactions= new ArrayList<>();
 
     ExerciseTwo(List<String> lines) {
         this.lines = lines;
     }
 
-    void addInformationOfTransaction() {
-        int currentTransaction = 1;
-        int numberOfTransaction = 0;
-        for (String line : lines) {
-            if (line.contains("Transaction " + (1 + numberOfTransaction) + " begin:")) {
-                String tempDate = line.substring(line.indexOf("[") + 1, line.indexOf("]"));
+    void addInformationOfTransaction(){
+        int currentTransaction=1;
+        int numberOfTransaction=0;
+        for (String line: lines) {
+            if(line.contains("Transaction "+(1+numberOfTransaction)+" begin:")) {
+                String tempDate = line.substring(line.indexOf("[")+1,line.indexOf("]"));
                 transactions.add(new Transaction());
                 transactions.get(numberOfTransaction).setDate(tempDate);
                 numberOfTransaction++;
             }
-            if (line.contains("Transaction " + currentTransaction) && line.contains("end")) {
+            if(line.contains("Transaction "+currentTransaction)&&line.contains("end")){
                 currentTransaction++;
             }
-            if (line.contains("EMV Scheme Matched:") && numberOfTransaction >= currentTransaction) {
-                if (transactions.get(currentTransaction - 1).getEMV_Scheme().equals("")) {
-                    String tempEMV_Scheme = line.substring(line.indexOf("[") + 1, line.indexOf("]"));
+            if(line.contains("EMV Scheme Matched:")&& numberOfTransaction>=currentTransaction){
+                if(transactions.get(currentTransaction-1).getEMV_Scheme().equals("")) {
+                    String tempEMV_Scheme = line.substring(line.indexOf("[")+1, line.indexOf("]"));
                     transactions.get(currentTransaction - 1).setEMV_Scheme(tempEMV_Scheme);
                 }
             }
         }
     }
 
-    String checkTypeOfApp(String date, String EMV_Scheme) throws IllegalArgumentException {
+    String checkTypeOfApp(String date,String EMV_Scheme) throws IllegalArgumentException{
         addInformationOfTransaction();
-        for (Transaction transaction : transactions) {
-            if (transaction.getDate().equals(date)) {
-                if (transaction.getEMV_Scheme().equals(EMV_Scheme)) {
+        for (Transaction transaction: transactions) {
+            if(transaction.getDate().equals(date)){
+                if(transaction.getEMV_Scheme().equals(EMV_Scheme)) {
                     return "Тип приложения соответствует ожидаемому";
                 } else return "Тип приложения не соответствует ожидаемому";
             }
@@ -48,9 +48,9 @@ public class ExerciseTwo {
     }
 }
 
-class Transaction {
-    private String date = "";
-    private String EMV_Scheme = "";
+class Transaction{
+    private String date="";
+    private String EMV_Scheme="";
 
     public Transaction() {
 
@@ -80,10 +80,11 @@ class MainTwo {
         try {
             lines = Files.readAllLines(Paths.get(".\\A.log"), StandardCharsets.UTF_8);
             ExerciseTwo logA = new ExerciseTwo(lines);
-            System.out.println(logA.checkTypeOfApp("dsocjscnkdsnc", "svsfvsfv"));
+            System.out.println(logA.checkTypeOfApp("2018-02-19 16:35:59.574","M/Chip Advance"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
 
 
         try {
